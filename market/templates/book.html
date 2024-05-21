@@ -1,0 +1,164 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="Section">
+      <div class="wrap">
+        <div class="Book">
+          <div class="BookCard">
+            <div class="BookCard-look">
+              <div class="BookCard-photo">
+                  <img src="{{ MEDIA_ROOT }}{{ image.image.url }}" alt={{ image.image_alt }}/>
+              </div>
+            </div>
+
+
+
+
+            <div class="BookCard-desc">
+              <div class="BookCard-header">
+                <h2 class="BookCard-title">{{ book.title }}
+                </h2>
+                <div class="BookCard-info">
+                  <div class="BookCard-by">
+                    <div class="BookCard-author"> {{ author }}
+                    </div>
+                  </div>
+                </div>
+                <div class="BookCard-info">
+                  <div class="BookCard-tags">
+                    {% for genre in genres %}
+                        <a href="#">{{ genre }}</a>{% if forloop.last %}{% else %}, {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              <div class="BookCard-info">
+                <div class="BookCard-tags">
+                  <strong class="BookCard-tagsTitle">Тэги:
+                  </strong>
+                    {% for tag in tags %}
+                        <a href="#">{{ tag }}</a>{% if forloop.last %}{% else %}, {% endif %}
+                    {% endfor %}
+                </div>
+              </div>
+
+
+              <div class="BookCard-text">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmod
+                  </li>
+                  <li>tempor incididunt ut labore et dolore magna aliqua. Lorem
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="Tabs Tabs_default">
+            <div class="Tabs-links">
+                <a class="Tabs-link_ACTIVE Tabs-link" href="#description">
+                    <span>{% trans "Описание" %}</span>
+                </a>
+                <a class="Tabs-link" href="#reviews">
+                    <span>{% trans "Отзывы" %} {{ num_review }}</span>
+                </a>
+            </div>
+            <div class="Tabs-wrap">
+              <div class="Tabs-block" id="description">
+                <p>
+                  {{ book.description }}
+                </p>
+              </div>
+              <div class="Tabs-block" id="reviews">
+                <div class="Comments">
+{#                  {% for review in reviews %}#}
+{#                  <div class="Comment">#}
+{#                    <div class="Comment-column Comment-column_pict">#}
+{#                      <img class="Comment-avatar" src="{{ MEDIA_ROOT }}{{ review.customer.profile.avatar.url }}" alt='avatar'>#}
+{#                    </div>#}
+{#                    <div class="Comment-column">#}
+{#                      <header class="Comment-header">#}
+{#                        <div>#}
+{#                          <strong class="Comment-title">{{ review.customer.profile.full_name }}#}
+{#                          </strong><span class="Comment-date">#}
+{#                          &#32;&#32;{{ review.date.day }}/&#32;&#32;{{ review.date.month }}/&#32;&#32;{{ review.date.year }}/#}
+{#                          &#32;&#32;{{ review.date.hour }}:{{ review.date.minute }}#}
+{#                          </span>#}
+{#                        </div>#}
+{#                      </header>#}
+{#                      <div class="Comment-content">{{ review.description }}#}
+{#                      </div>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                  {% endfor %}#}
+
+{#                  <div class="Pagination">#}
+{#                    <div class="Pagination-ins">#}
+{#                      {% if reviews.has_previous %}#}
+{#                      <a class="Pagination-element Pagination-element_prev" href="?page={{ reviews.previous_page_number }}#reviews">#}
+{#                        <img style="margin: 0;" src="{% static "assets/img/icons/prevPagination.svg" %}" alt="prevPagination.svg"/>#}
+{#                      </a>#}
+{#                      {% endif %}#}
+{#                      {% for page in reviews.paginator.page_range %}#}
+{#                        {% if reviews.number == page %}#}
+{#                        <a class="Pagination-element Pagination-element_current" href="?page={{ page }}#reviews">#}
+{#                          <span class="Pagination-text">{{ page }}#}
+{#                          </span>#}
+{#                        </a>#}
+{#                        {% elif page >= reviews.number|add:-2 and page <= reviews.number|add:2 %}#}
+{#                        <a class="Pagination-element" href="?page={{ page }}#reviews">#}
+{#                          <span class="Pagination-text">{{ page }}#}
+{#                          </span>#}
+{#                        </a>#}
+{#                      {% endif %}#}
+{#                      {% endfor %}#}
+{#                      {% if reviews.has_next %}#}
+{#                      <a class="Pagination-element Pagination-element_prev" href="?page={{ reviews.next_page_number }}#reviews">#}
+{#                        <img style="margin: 0;" src="{% static "assets/img/icons/nextPagination.svg" %}" alt="nextPagination.svg"/>#}
+{#                      </a>#}
+{#                      {% endif %}#}
+{#                    </div>#}
+{#                  </div>#}
+{##}
+{#                  {% if request.user.is_authenticated and can_create_reviews %}#}
+{#                  <header class="Section-header Section-header_Book">#}
+{#                    <h3 class="Section-title">{% trans "Написать отзыв" %}#}
+{#                    </h3>#}
+{#                  </header>#}
+{#                  <div class="Tabs-addComment">#}
+{#                    <form class="form" action="/Book/{{ Book.id }}/" method="post">#}
+{#                      {% csrf_token %}#}
+{#                      <div class="form-group">#}
+{#                        <textarea class="form-textarea" name="description" maxlength="2000" required="" id="id_description" placeholder="{% trans "Ваш отзыв" %}"></textarea>#}
+{#                      </div>#}
+{##}
+{#                      <div class="form-group">#}
+{#                        <button class="btn btn_muted" type="submit">{% trans "Отправить отзыв" %}#}
+{#                        </button>#}
+{#                      </div>#}
+{#                    </form>#}
+{#                  </div>#}
+{#                  {% elif request.user.is_authenticated and not can_create_reviews %}#}
+{#                  <header class="Section-header Section-header_Book">#}
+{#                    <h3 class="Section-title">{% trans "Вы уже оставляли отзыв на данный товар" %}#}
+{#                    </h3>#}
+{#                  </header>#}
+{#                  {% else %}#}
+{#                  <header class="Section-header Section-header_Book">#}
+{#                    <h3 class="Section-title">{% trans "Чтобы оставить отзыв, вам нужно" %}#}
+{#                      <a href="{% url 'login' %}">{% trans "авторизоваться" %}</a>#}
+{#                    </h3>#}
+{#                  </header>#}
+{#                  {% endif %}#}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
