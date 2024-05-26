@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_mptt_admin',
     'mptt',
     'app_market.apps.AppMarketConfig',
+    'app_login.apps.AppLoginConfig',
 ]
 
 MIDDLEWARE = [

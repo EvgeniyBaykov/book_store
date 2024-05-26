@@ -24,7 +24,8 @@ class BookView(DetailView):
         context = super().get_context_data(**kwargs)
         book = self.object
         context['image'] = book.image.first()
-        context['author'] = 'authors name'
+        context['author'] = f'{book.author.profile.first_name} {book.author.profile.last_name}'
         context['genres'] = book.genre.all()
         context['tags'] = book.tags.all()
+        context['cycle'] = book.cycle
         return context
