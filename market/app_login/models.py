@@ -13,6 +13,7 @@ class Profile(models.Model):
     first_name = models.CharField(max_length=200, verbose_name=_('имя пользователя'))
     last_name = models.CharField(max_length=200, blank=True, null=True, verbose_name=_('фамилия пользователя'))
     phone = models.BigIntegerField(unique=True, null=True, blank=True, verbose_name=_('номер телефона'))
+    email = models.EmailField(unique=True, blank=True, null=True, verbose_name='email')
     author = models.BooleanField(default=False, verbose_name=_('является ли автором'))
     birthday = models.DateField(blank=True, null=True, verbose_name=_('дата рождения'))
     gender = models.CharField(blank=True, null=True, max_length=1, choices=GENDER_CHOICES, verbose_name=_('пол'))
@@ -21,6 +22,9 @@ class Profile(models.Model):
     class Meta:
         verbose_name_plural = _('Профили')
         verbose_name = _('Профиль')
+
+    def __str__(self):
+        return self.user.username
 
 
 class ProfileAvatar(models.Model):
