@@ -23,6 +23,10 @@ class BookReviewImageInline(admin.TabularInline):
     max_num = 3
 
 
+class BookTagInLine(admin.TabularInline):
+    model = Book.tags.through
+
+
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     model = Book
@@ -30,17 +34,24 @@ class BookAdmin(admin.ModelAdmin):
     search_fields = ['title', 'author', 'tags']
     list_filter = ['genre']
     prepopulated_fields = {'slug': ('author', 'title')}
-    inlines = [BookImageInline, ]
+    inlines = [BookImageInline, BookTagInLine, ]
+    exclude = ["tags"]
 
     @admin.display(description=_('Автор'))
     def author_name(self, obj):
-        return f'{obj.author.profile.first_name} {obj.author.profile.last_name}'
+        last_name = obj.author.profile.last_name
+        if last_name:
+            name = f'{obj.author.profile.first_name} {last_name}'
+        else:
+            name = f'{obj.author.profile.first_name}'
+        return name
 
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    model = Tag
+    # model = Tag
     list_display = ['id', 'tag']
+    inlines = [BookTagInLine,]
 
 
 @admin.register(Genre)
@@ -51,9 +62,18 @@ class GenreAdmin(DjangoMpttAdmin):
 @admin.register(Cycle)
 class CycleAdmin(admin.ModelAdmin):
     model = Cycle
-    list_display = ['id', 'name', 'author', 'create_date', 'update_date', 'completed']
+    list_display = ['id', 'name', 'author_name', 'create_date', 'update_date', 'completed']
     search_fields = ['name', 'author', 'completed']
     prepopulated_fields = {"slug": ("name",)}
+
+    @admin.display(description=_('Автор'))
+    def author_name(self, obj):
+        last_name = obj.author.profile.last_name
+        if last_name:
+            name = f'{obj.author.profile.first_name} {last_name}'
+        else:
+            name = f'{obj.author.profile.first_name}'
+        return name
 
 
 @admin.register(BookReview)

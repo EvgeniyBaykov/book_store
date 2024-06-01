@@ -1,0 +1,21 @@
+default:
+  ALLOWED_HOSTS: []
+  DATABASE_URL: ''
+  DEBUG: true
+  SECRET_KEY: ''
+  DB_HOST: ''
+  DB_PORT: ''
+  DB_NAME: ''
+  DB_USER: ''
+  DB_PASSWORD: ''
+  EMAIL_HOST: ''
+  EMAIL_HOST_USER: ''
+  EMAIL_HOST_PASSWORD: ''
+development:
+  ALLOWED_HOSTS:
+  - 127.0.0.1
+  - localhost
+  DEBUG: true
+  EMAIL_HOST: 'smtp.email-domain.com'
+
+

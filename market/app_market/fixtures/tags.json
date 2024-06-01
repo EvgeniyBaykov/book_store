@@ -1,0 +1,86 @@
+[
+  {
+    "model": "app_market.tag",
+    "pk": 1,
+    "fields": {
+      "tag": "Выживание"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 2,
+    "fields": {
+      "tag": "Киберпанк"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 3,
+    "fields": {
+      "tag": "реалрпг"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 4,
+    "fields": {
+      "tag": "Бои"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 5,
+    "fields": {
+      "tag": "Жесткий главный герой"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 6,
+    "fields": {
+      "tag": "Властный герой"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 7,
+    "fields": {
+      "tag": "Воин"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 8,
+    "fields": {
+      "tag": "Кровь"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 9,
+    "fields": {
+      "tag": "Попаданцы"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 10,
+    "fields": {
+      "tag": "Алчный герой"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 11,
+    "fields": {
+      "tag": "Жестокий герой"
+    }
+  },
+  {
+    "model": "app_market.tag",
+    "pk": 12,
+    "fields": {
+      "tag": "Дракон"
+    }
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "model": "app_profile.profileavatar",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "image": "images/profiles/2024/06/blackandwhite_3.jpg",
+      "image_alt": "Аватар пользователя"
+    }
+  },
+  {
+    "model": "app_profile.profileavatar",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "image": "images/profiles/2024/06/boy.jpg",
+      "image_alt": "Аватар пользователя"
+    }
+  }
+]

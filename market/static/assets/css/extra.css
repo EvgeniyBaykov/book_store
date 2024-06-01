@@ -4151,11 +4151,11 @@ a.Cart-title {
 }
 
 .BookCard-photo {
-    width: 400px;
+    width: 265px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: 352px;
     border: 1px solid #e0e0e0;
     padding: 30px;
 }

@@ -24,7 +24,12 @@ class Book(models.Model):
         verbose_name_plural = _('Книги')
 
     def __str__(self):
-        return f'{self.author.profile.first_name} {self.author.profile.last_name} - {self.title}'
+        last_name = self.author.profile.last_name
+        if last_name:
+            name = f'{self.author.profile.first_name} {last_name} - {self.title}'
+        else:
+            name = f'{self.author.profile.first_name} - {self.title}'
+        return name
 
 
 class Tag(models.Model):
@@ -72,7 +77,7 @@ class BookImage(models.Model):
 class Cycle(models.Model):
     """Модель описывающая цикл книг"""
     name = models.CharField(max_length=100, unique=True, db_index=True, verbose_name=_('название цикла'))
-    description = models.CharField(max_length=2000, verbose_name=_('описание цикла'))
+    description = models.CharField(max_length=2000, null=True, blank=True, verbose_name=_('описание цикла'))
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cycles', verbose_name=_('автор'))
     create_date = models.DateField(auto_now_add=True, verbose_name=_('дата создания'))
     update_date = models.DateField(null=True, auto_now=True, verbose_name=_('дата редактирования'))

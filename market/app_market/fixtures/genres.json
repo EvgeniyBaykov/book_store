@@ -1,0 +1,93 @@
+[
+  {
+    "model": "app_market.genre",
+    "pk": 1,
+    "fields": {
+      "name": "Попаданцы",
+      "parent": null,
+      "slug": "popadancy",
+      "lft": 1,
+      "rght": 4,
+      "tree_id": 1,
+      "level": 0
+    }
+  },
+  {
+    "model": "app_market.genre",
+    "pk": 2,
+    "fields": {
+      "name": "Попаданцы в магические миры",
+      "parent": 1,
+      "slug": "popadancy-v-magicheskie-miry",
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_market.genre",
+    "pk": 3,
+    "fields": {
+      "name": "Фэнтези",
+      "parent": null,
+      "slug": "fentezi",
+      "lft": 1,
+      "rght": 4,
+      "tree_id": 3,
+      "level": 0
+    }
+  },
+  {
+    "model": "app_market.genre",
+    "pk": 4,
+    "fields": {
+      "name": "Боевое фэнтези",
+      "parent": 3,
+      "slug": "boevoe-fentezi",
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 3,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_market.genre",
+    "pk": 5,
+    "fields": {
+      "name": "Фантастика",
+      "parent": null,
+      "slug": "fantastika",
+      "lft": 1,
+      "rght": 6,
+      "tree_id": 2,
+      "level": 0
+    }
+  },
+  {
+    "model": "app_market.genre",
+    "pk": 6,
+    "fields": {
+      "name": "Боевая фантастика",
+      "parent": 5,
+      "slug": "boevaya-fantastika",
+      "lft": 4,
+      "rght": 5,
+      "tree_id": 2,
+      "level": 1
+    }
+  },
+  {
+    "model": "app_market.genre",
+    "pk": 7,
+    "fields": {
+      "name": "Антиутопия",
+      "parent": 5,
+      "slug": "antiutopiya",
+      "lft": 2,
+      "rght": 3,
+      "tree_id": 2,
+      "level": 1
+    }
+  }
+]

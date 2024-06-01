@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'mptt',
     'app_market.apps.AppMarketConfig',
     'app_login.apps.AppLoginConfig',
+    'app_profile.apps.AppProfileConfig',
 ]
 
 MIDDLEWARE = [
