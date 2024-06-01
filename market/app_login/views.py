@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import (LoginView,
                                        LogoutView,
                                        PasswordResetView,
                                        PasswordResetDoneView,
                                        PasswordResetConfirmView,
                                        PasswordResetCompleteView)
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from app_login.forms import RegisterForm
 
 
 class LogView(LoginView):
@@ -52,3 +55,18 @@ class UserPasswordResetCompleteView(PasswordResetCompleteView):
     """
 
     template_name = 'registration/password_reset_complete.html'
+
+
+def register_view(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return HttpResponseRedirect('/')
+    else:
+        form = RegisterForm()
+    return render(request, 'registration/registration.html', {'form': form})

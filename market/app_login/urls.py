@@ -4,12 +4,13 @@ from app_login.views import (LogView,
                              UserResetPasswordView,
                              UserPasswordResetDoneView,
                              UserPasswordResetConfirmView,
-                             UserPasswordResetCompleteView
+                             UserPasswordResetCompleteView,
+                             register_view,
                              )
 
 urlpatterns = [
-    path('', LogView.as_view(), name='login'),
-    # path('registration/', register_view, name='registration'),
+    path('login/', LogView.as_view(), name='login'),
+    path('registration/', register_view, name='registration'),
     path('logout/', LogoutUserView.as_view(), name='logout'),
     path('password-reset/', UserResetPasswordView.as_view(), name='password_reset'),
     path('password-reset/done/', UserPasswordResetDoneView.as_view(), name='password_reset_done'),
