@@ -6,6 +6,7 @@ from app_login.views import (LogView,
                              UserPasswordResetConfirmView,
                              UserPasswordResetCompleteView,
                              register_view,
+                             UserDeleteView,
                              )
 
 urlpatterns = [
@@ -16,4 +17,5 @@ urlpatterns = [
     path('password-reset/done/', UserPasswordResetDoneView.as_view(), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', UserPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/done/', UserPasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path('delete-account/', UserDeleteView.as_view(), name='delete_account'),
 ]

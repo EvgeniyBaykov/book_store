@@ -10,5 +10,5 @@ class ProfileAvatarInline(admin.TabularInline):
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     model = Profile
-    list_display = ['id', 'first_name', 'last_name', 'author', 'phone']
+    list_display = ['id', 'user', 'first_name', 'last_name', 'author', 'phone']
     inlines = [ProfileAvatarInline,]

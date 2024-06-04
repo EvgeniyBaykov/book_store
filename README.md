@@ -1,2 +1,23 @@
 # book_store
-Online book store where you are closer to the author.
+Онлайн книжный магазин, в котором вы ближе к автору.
+
+## Начало работы
+Для работы программы необходимо создать виртуальное окружение через модуль 
+venv, который идёт в поставке Python 3 в корневой папке проекта:
+
+    python -m venv
+Установка зависимостей:
+    
+    pip install -r requirements.txt
+
+Настройка конфигурации осуществляется пакетом Dynaconf:
+Ссылка на официальную документацию [dynaconf.com](https://www.dynaconf.com/) 
+
+Переименуйте файл "/temp.secrets.yaml" в "/.secrets.yaml".
+Заполните приватные переменные в файле "/.secrets.yaml"
+
+
+
+
+
+

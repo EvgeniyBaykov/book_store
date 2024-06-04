@@ -94,7 +94,7 @@ class Cycle(models.Model):
 
 class BookReview(models.Model):
     """Модель описывающая отзывы к книге"""
-    user = models.ForeignKey(User, on_delete=models.SET('Deleted'), related_name='book_reviews',
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='book_reviews', null=True,
                              verbose_name=_('пользователь'))
     book = models.ForeignKey('Book', on_delete=models.CASCADE, related_name='book_reviews', verbose_name=_('книга'))
     description = models.TextField(max_length=2000, verbose_name=_('текст комментария'))
