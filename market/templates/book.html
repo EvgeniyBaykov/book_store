@@ -29,9 +29,15 @@
                 </div>
                 <div class="BookCard-info">
                   <div class="BookCard-tags">
+
+
+
                     {% for genre in genres %}
                         <a href="#">{{ genre }}</a>{% if forloop.last %}{% else %}, {% endif %}
                     {% endfor %}
+
+
+
                   </div>
                 </div>
               </div>
@@ -39,13 +45,13 @@
                 <div class="BookCard-tags">
                   <strong class="BookCard-tagsTitle">Тэги:
                   </strong>
+
+
                     {% for tag in tags %}
                         <a href="#">{{ tag }}</a>{% if forloop.last %}{% else %}, {% endif %}
                     {% endfor %}
                 </div>
               </div>
-
-
               <div class="BookCard-text">
                 <ul>
                   <li>{{ cycle.name }}

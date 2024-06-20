@@ -95,11 +95,6 @@
                                 <div class="row ControlPanel-rowSplit">
                                     <div class="row-block">
                                         {% if request.user.is_authenticated %}
-
-
-
-
-
                                         {% else  %}
                                             <a class="ControlPanel-title" href="{% url 'login' %}">Login / Register</a>
                                         {% endif %}
@@ -119,12 +114,6 @@
               block
               -->
                 </div>
-
-
-
-
-
-
                 <div class="wrap">
                     <div class="row Header-rowMain">
                         <div class="row-block Header-logo"><a class="logo" href="{% url 'home' %}"><img class="logo-image" src="{% static "assets/img/logo.png" %}" alt="logo.png" /></a>
@@ -134,10 +123,18 @@
                                 <ul class="menu menu_main">
                                     <li class="menu-item"><a class="menu-link" href="{% url 'home' %}">{% trans "Главная" %}</a>
                                     </li>
-{#                                    <li class="menu-item"><span class="menu-label menu-label_success">{% trans "Скидки" %}</span><a class="menu-link" href="{% url 'catalog' %}">{% trans "Каталог" %}</a>#}
+
+
+
+
+                                    <li class="menu-item"><span class="menu-label menu-label_success">{% trans "Скидки" %}</span><a class="menu-link" href="#">{% trans "Каталог" %}</a>
                                     </li>
-{#                                    <li class="menu-item"><a class="menu-link" href="{% url 'compare-goods' %}">{% trans "Сравнение" %}</a>#}
+                                    <li class="menu-item"><a class="menu-link" href="#">{% trans "Сравнение" %}</a>
                                     </li>
+
+
+
+
                                 </ul>
                             </div>
                         </nav>
@@ -149,23 +146,33 @@
                                         <img class="CartBlock-img" src="{% static "assets/img/icons/loon-icon.svg" %}" alt="loon-icon.svg" />
                                     </button>
                                     <div class="dropdown-content">
-{#                                        <a class="dropdown-content-a" href="{% url 'account' %}">{% trans "Личный кабинет" %}</a>#}
+
+
+
+
+                                        <a class="dropdown-content-a" href="#">{% trans "Личный кабинет" %}</a>
+
+
+
                                         {% if perms.auth_user.is_staff %}
                                             <a class="dropdown-content-a" href="/admin/">{% trans "Административный раздел" %}</a>
                                         {% endif %}
-{#                                        <a class="dropdown-content-a" href="{% url 'logout' %}">{% trans "Выход" %}</a>#}
+                                        <a class="dropdown-content-a" href="{% url 'logout' %}">{% trans "Выход" %}</a>
                                     </div>
                                 </div>
                                 {% endif %}
 
-{#                                <a class="CartBlock-block" href="{% url 'compare-goods' %}"><img class="CartBlock-img" src="{% static "assets/img/icons/exchange.svg" alt="exchange.svg" %}" alt="exchange.svg" /><span class="CartBlock-amount">{{ amount_Books_for_compare }}</span>#}
+
+
+                                <a class="CartBlock-block" href="#"><img class="CartBlock-img" src="{% static "assets/img/icons/exchange.svg" %}" alt="exchange.svg" /><span class="CartBlock-amount">{{ amount_Books_for_compare }}</span>
+                                </a>
+                                <a class="CartBlock-block" href="#"><img class="CartBlock-img" src="{% static "assets/img/icons/cart.svg" %}" alt="cart.svg" /><span class="CartBlock-amount">{{ num_Books_in_cart }}</span>
                                 </a>
 
-{#                                <a class="CartBlock-block" href="{% url 'cart' %}"><img class="CartBlock-img" src="{% static "assets/img/icons/cart.svg" %}" alt="cart.svg" /><span class="CartBlock-amount">{{ num_Books_in_cart }}</span>#}
-                                </a>
+
+
                                 <div class="CartBlock-block"><span class="CartBlock-price">0.00$</span>
                                 </div>
-
                             </div>
                         </div>
                         <div class="row-block Header-trigger"><a class="menuTrigger" href="#navigate">
@@ -215,12 +222,20 @@
                         <div class="Header-searchLink"><img src="{% static "assets/img/icons/search.svg" %}" alt="search.svg" />
                         </div>
                         <div class="Header-search">
+
+
                             <div class="search">
-{#                                <form class="form form_search" action="{% url 'catalog' %}" method="get">#}
+
+                                <form class="form form_search" action="" method="get">
+
                                     <input class="search-input" id="title" name="title" type="text" placeholder="NVIDIA GeForce RTX 3060" />
                                     <button class="search-button" type="submit" name="search" id="search"><img src="{% static "assets/img/icons/search.svg" %}" alt="search.svg" />{% trans "Поиск" %}
                                     </button>
                                 </form>
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -248,22 +263,33 @@
                             <strong class="Footer-title">{% trans "Навигация" %}
                             </strong>
                             <ul class="menu menu_vt Footer-menu">
+
+
+
+
                                 <li class="menu-item"><a class="menu-link" href="{% url 'home' %}">{% trans "Главная" %}</a>
                                 </li>
-{#                                <li class="menu-item"><a class="menu-link" href="{% url 'catalog' %}">{% trans "Каталог" %}</a>#}
+                                <li class="menu-item"><a class="menu-link" href="#">{% trans "Каталог" %}</a>
                                 </li>
-{#                                <li class="menu-item"><a class="menu-link" href="{% url 'compare-goods' %}">{% trans "Сравнение" %}</a>#}
+                                <li class="menu-item"><a class="menu-link" href="#">{% trans "Сравнение" %}</a>
                                 </li>
-{#                                <li class="menu-item"><a class="menu-link" href="{% url 'account' %}">{% trans "Профиль" %}</a>#}
+                                <li class="menu-item"><a class="menu-link" href="#">{% trans "Профиль" %}</a>
                                 </li>
+
+
 
                             </ul>
                         </div>
                         <div class="row-block">
                             <strong class="Footer-title">{% trans "Контакты" %}
                             </strong>
+
+
                             <p>Phone: 8.800.200.600<br>Email: xxx@meg.com<br>
                             </p>
+
+
+
                             <ul class="menu menu_img menu_smallImg Footer-menuSoc">
                                 <li class="menu-item"><a class="menu-link" href="#"><img src="{% static "assets/img/icons/socialFooter/fb.svg" %}" alt="fb.svg" /></a>
                                 </li>

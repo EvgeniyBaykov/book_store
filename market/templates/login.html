@@ -27,12 +27,9 @@
                 <input type="submit" value="{% trans "Войти" %}">
             </div>
             <a class="forgot-label" href="{% url 'password_reset' %}">{% trans "Забыли пароль?" %}</a>
-
-
-
-{#            <a class="registr" href="{% url 'registration' %}">#}
-{#                {% trans "Регистрация" %}#}
-{#            </a>#}
+            <a class="registr" href="{% url 'registration' %}">
+                {% trans "Регистрация" %}
+            </a>
         </form>
     </div>
 {% endblock %}
