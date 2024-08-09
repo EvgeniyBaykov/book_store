@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, DetailView
-from app_market.utils import get_all_books
+from django.views.generic import TemplateView, DetailView, View
+from app_market.utils import get_all_books, get_all_genres, get_catalog_products
 from app_market.models import Book
 
 
@@ -11,6 +11,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["books"] = get_all_books()
+        context["categories"] = get_all_genres()
         return context
 
 
@@ -29,3 +30,9 @@ class BookView(DetailView):
         context['tags'] = book.tags.all()
         context['cycle'] = book.cycle
         return context
+
+
+class CatalogView(View):
+    """Каталог книг"""
+    def get(self, request):
+        return render(request, 'catalog.html', context=get_catalog_products(request))

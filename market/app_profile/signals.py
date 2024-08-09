@@ -8,6 +8,7 @@ User = get_user_model()
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """При регистрации нового пользователя функция создаёт для него профиль"""
     if created:
         instance.profile = Profile.objects.create(user=instance)
     instance.profile.save()

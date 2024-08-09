@@ -1,0 +1,31 @@
+{% load i18n %}
+{# Карточка с информацией о книге #}
+
+{# Примечание: обрамляющий div у разных карточек может иметь разные css-классы, #}
+{# поэтому он здесь не содержится #}
+
+{# TODO: Разобраться с выводом старой и новой цены при наличии скидки на книгу #}
+
+  <a class="Card-picture" href="{% url 'book' card.id %}">
+    <img src="{{ MEDIA_ROOT }}{{ card.image.first.image.url }}" alt="{{ card.image.first.image_alt }}"/>
+  </a>
+  <div class="Card-content">
+    <strong class="Card-title">
+      <a href="{% url 'book' card.id %}">
+        {{ card.title }}
+      </a>
+    </strong>
+    <div class="Card-description">
+      <div class="Card-cost">
+        <span class="Card-price">{{ card.price }}</span>
+      </div>
+      <div class="Card-category">
+        {% for genre in card.genre.all %}
+            {{ genre }}
+        {% endfor %}
+      </div>
+
+      {% include 'include/card_hover.html' %}
+
+    </div>
+  </div>

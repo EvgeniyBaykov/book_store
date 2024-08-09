@@ -123,18 +123,8 @@
                                 <ul class="menu menu_main">
                                     <li class="menu-item"><a class="menu-link" href="{% url 'home' %}">{% trans "Главная" %}</a>
                                     </li>
-
-
-
-
-                                    <li class="menu-item"><span class="menu-label menu-label_success">{% trans "Скидки" %}</span><a class="menu-link" href="#">{% trans "Каталог" %}</a>
+                                    <li class="menu-item"><a class="menu-link" href="#">{% trans "Моя библиотека" %}</a>
                                     </li>
-                                    <li class="menu-item"><a class="menu-link" href="#">{% trans "Сравнение" %}</a>
-                                    </li>
-
-
-
-
                                 </ul>
                             </div>
                         </nav>
@@ -146,14 +136,7 @@
                                         <img class="CartBlock-img" src="{% static "assets/img/icons/loon-icon.svg" %}" alt="loon-icon.svg" />
                                     </button>
                                     <div class="dropdown-content">
-
-
-
-
                                         <a class="dropdown-content-a" href="#">{% trans "Личный кабинет" %}</a>
-
-
-
                                         {% if perms.auth_user.is_staff %}
                                             <a class="dropdown-content-a" href="/admin/">{% trans "Административный раздел" %}</a>
                                         {% endif %}
@@ -161,20 +144,13 @@
                                     </div>
                                 </div>
                                 {% endif %}
-
-
-
-                                <a class="CartBlock-block" href="#"><img class="CartBlock-img" src="{% static "assets/img/icons/exchange.svg" %}" alt="exchange.svg" /><span class="CartBlock-amount">{{ amount_Books_for_compare }}</span>
-                                </a>
                                 <a class="CartBlock-block" href="#"><img class="CartBlock-img" src="{% static "assets/img/icons/cart.svg" %}" alt="cart.svg" /><span class="CartBlock-amount">{{ num_Books_in_cart }}</span>
                                 </a>
-
-
-
-                                <div class="CartBlock-block"><span class="CartBlock-price">0.00$</span>
+                                <div class="CartBlock-block"><span class="CartBlock-price">0.00руб</span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="row-block Header-trigger"><a class="menuTrigger" href="#navigate">
                                 <div class="menuTrigger-content">{% trans "Показать навигацию" %}
                                 </div><span></span><span></span><span></span>
@@ -188,25 +164,19 @@
                             <div class="CategoriesButton">
                                 <div class="CategoriesButton-title">
                                     <div class="CategoriesButton-icon"><img src="{% static "assets/img/icons/allDep.svg" %}" alt="allDep.svg" />
-                                    </div><span class="CategoriesButton-text">{% trans "Все категории" %}</span>
+                                    </div><span class="CategoriesButton-text">{% trans "Книги" %}</span>
                                     <div class="CategoriesButton-arrow">
                                     </div>
                                 </div>
                                 <div class="CategoriesButton-content">
                                     {% if categories %}
                                         {% recursetree categories %}
-                                            {# Меню категорий товара #}
+                                            {# Меню жанров книг #}
                                             <div class="CategoriesButton-link">
-                                                <a href="{% url 'catalog' %}?category={{ node.id }}">
-                                                    {% if node.image %}
-                                                        <div class="CategoriesButton-icon">
-                                                            <img src="{{ MEDIA_ROOT }}{{ node.image.url }}" alt="{{ node.image_alt }}"/>
-                                                        </div>
-                                                    {% endif %}
-                                                    <span class="CategoriesButton-text">{{ node.title }}</span>
+                                                <a href="{% url 'catalog' %}?genre={{ node.id }}">
+                                                    <span class="CategoriesButton-text">{{ node.name }}</span>
                                                 </a>
                                                 {% if not node.is_leaf_node %}
-
                                                     <div class="CategoriesButton-submenu">
                                                         {{ children }}
                                                     </div>
@@ -214,7 +184,7 @@
                                             </div>
                                         {% endrecursetree %}
                                     {% else %}
-                                    <p>{% trans "Категории не добавлены" %}</p>
+                                    <p>{% trans "Книги не добавлены" %}</p>
                                     {% endif %}
                                 </div>
                             </div>
