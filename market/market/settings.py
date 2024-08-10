@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_mptt_admin',
     'mptt',
+    'app_settings.apps.AppSettingsConfig',
     'app_market.apps.AppMarketConfig',
     'app_login.apps.AppLoginConfig',
     'app_profile.apps.AppProfileConfig',
@@ -80,12 +81,24 @@ WSGI_APPLICATION = 'market.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if _settings.NAME == 'admin':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': _settings.DB_NAME,
+            'USER': _settings.DB_USER,
+            'PASSWORD': _settings.DB_PASSWORD,
+            'HOST': _settings.DB_HOST,
+            'PORT': _settings.DB_PORT,
+        }
     }
-}
+elif _settings.NAME == 'developer':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
@@ -144,7 +157,7 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-if DEBUG:
+if _settings.DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = ''
