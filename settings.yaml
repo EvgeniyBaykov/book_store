@@ -3,19 +3,31 @@ default:
   DATABASE_URL: ''
   DEBUG: true
   SECRET_KEY: ''
-  DB_HOST: ''
-  DB_PORT: ''
-  DB_NAME: ''
-  DB_USER: ''
-  DB_PASSWORD: ''
   EMAIL_HOST: ''
   EMAIL_HOST_USER: ''
   EMAIL_HOST_PASSWORD: ''
+  SITE_NAME: 'MEGANO'
+  PHONE_NUMBER1: '8-960-600-60-60'
+  PHONE_NUMBER2: '8(495)666-66-66'
+  ADDRESS: 'Moscow'
+  BANNER_NUMBER: 3
+  STOPPING_SALES: false
+  BANNER_CACHE_TIME: 900
+  TOTAL_CACHE_TIME: 900
+  COMMON_BOOKS_TOP_NUMBER: 8
+  NUM_REVIEWS_PER_PAGE: 2
+  NUM_BOOKS_PER_PAGE: 8
 development:
+  NAME: 'developer'
   ALLOWED_HOSTS:
   - 127.0.0.1
   - localhost
   DEBUG: true
   EMAIL_HOST: 'smtp.email-domain.com'
-
-
+production:
+  NAME: 'admin'
+  DB_HOST: ''
+  DB_PORT: ''
+  DB_NAME: ''
+  DB_USER: ''
+  DB_PASSWORD: ''
