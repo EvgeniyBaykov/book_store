@@ -1,0 +1,559 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-10 14:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: app_login/forms.py:22
+msgid "Ваш аккаунт будет удален безвозвратно!"
+msgstr "Your account will be permanently deleted!"
+
+#: app_market/admin.py:40 app_market/admin.py:69
+msgid "Автор"
+msgstr "Author"
+
+#: app_market/models.py:9
+msgid "название книги"
+msgstr "the title of the book"
+
+#: app_market/models.py:10 app_market/models.py:81
+msgid "автор"
+msgstr "author"
+
+#: app_market/models.py:11
+msgid "описание"
+msgstr "description"
+
+#: app_market/models.py:12
+msgid "цена"
+msgstr "price"
+
+#: app_market/models.py:13 app_market/models.py:37
+msgid "теги"
+msgstr "tags"
+
+#: app_market/models.py:14
+msgid "жанр"
+msgstr "genre"
+
+#: app_market/models.py:16
+msgid "цикл"
+msgstr "cycle"
+
+#: app_market/models.py:17
+msgid "примечание автора"
+msgstr "author's note"
+
+#: app_market/models.py:18 app_market/models.py:82
+msgid "дата создания"
+msgstr "date of creation"
+
+#: app_market/models.py:19 app_market/models.py:83
+msgid "дата редактирования"
+msgstr "date of editing"
+
+#: app_market/models.py:20 app_market/models.py:52 app_market/models.py:85
+msgid "название ссылки"
+msgstr "the name of the link"
+
+#: app_market/models.py:23
+msgid "Книга"
+msgstr "Book"
+
+#: app_market/models.py:24 templates/base/base.html:167
+msgid "Книги"
+msgstr "Books"
+
+#: app_market/models.py:40
+msgid "Тег"
+msgstr "Tag"
+
+#: app_market/models.py:41
+msgid "Теги"
+msgstr "Tags"
+
+#: app_market/models.py:49
+msgid "название жанра"
+msgstr "the name of the genre"
+
+#: app_market/models.py:51
+msgid "родительский жанр"
+msgstr "parent genre"
+
+#: app_market/models.py:59
+msgid "Жанр"
+msgstr "Genre"
+
+#: app_market/models.py:60
+msgid "Жанры"
+msgstr "Genres"
+
+#: app_market/models.py:68 app_market/models.py:99
+msgid "книга"
+msgstr "Book"
+
+#: app_market/models.py:69
+msgid "обложка книги"
+msgstr "book cover"
+
+#: app_market/models.py:70
+msgid "Обложка книги"
+msgstr "Book cover"
+
+#: app_market/models.py:70 app_market/models.py:125 app_profile/models.py:33
+msgid "подсказка"
+msgstr "clue"
+
+#: app_market/models.py:73
+msgid "Обложка"
+msgstr "Cover"
+
+#: app_market/models.py:74
+msgid "Обложки"
+msgstr "Covers"
+
+#: app_market/models.py:79
+msgid "название цикла"
+msgstr "cycle name"
+
+#: app_market/models.py:80
+msgid "описание цикла"
+msgstr "cycle description"
+
+#: app_market/models.py:91
+msgid "Цикл"
+msgstr "Cycle"
+
+#: app_market/models.py:92
+msgid "Циклы"
+msgstr "Cycles"
+
+#: app_market/models.py:98 app_profile/models.py:12 app_profile/models.py:31
+msgid "пользователь"
+msgstr "user"
+
+#: app_market/models.py:100
+msgid "текст комментария"
+msgstr "comment text"
+
+#: app_market/models.py:101
+msgid "дата написания"
+msgstr "date of writing"
+
+#: app_market/models.py:117
+msgid "Отзыв"
+msgstr ""
+
+#: app_market/models.py:118 templates/book.html:74
+msgid "Отзывы"
+msgstr ""
+
+#: app_market/models.py:123
+msgid "отзыв"
+msgstr ""
+
+#: app_market/models.py:124
+msgid "картинка"
+msgstr ""
+
+#: app_market/models.py:125
+msgid "Изображение к отзыву"
+msgstr ""
+
+#: app_market/models.py:128
+msgid "Картинка"
+msgstr ""
+
+#: app_market/models.py:129
+msgid "Картинки"
+msgstr ""
+
+#: app_profile/models.py:9
+msgid "Мужской"
+msgstr ""
+
+#: app_profile/models.py:10
+msgid "Женский"
+msgstr ""
+
+#: app_profile/models.py:13
+msgid "имя пользователя"
+msgstr ""
+
+#: app_profile/models.py:14
+msgid "фамилия пользователя"
+msgstr ""
+
+#: app_profile/models.py:15
+msgid "номер телефона"
+msgstr ""
+
+#: app_profile/models.py:16
+msgid "является ли автором"
+msgstr ""
+
+#: app_profile/models.py:17
+msgid "дата рождения"
+msgstr ""
+
+#: app_profile/models.py:18
+msgid "пол"
+msgstr ""
+
+#: app_profile/models.py:19
+msgid "о себе"
+msgstr ""
+
+#: app_profile/models.py:22
+msgid "Профили"
+msgstr ""
+
+#: app_profile/models.py:23 templates/base/base.html:246
+msgid "Профиль"
+msgstr ""
+
+#: app_profile/models.py:32
+msgid "аватар пользователя"
+msgstr ""
+
+#: app_profile/models.py:33
+msgid "Аватар пользователя"
+msgstr ""
+
+#: app_settings/apps.py:8
+msgid "настройки сайта"
+msgstr "site settings"
+
+#: app_settings/models.py:7
+msgid "название сайта"
+msgstr "site name"
+
+#: app_settings/models.py:8
+msgid "номер телефона 1"
+msgstr "phone number 1"
+
+#: app_settings/models.py:9
+msgid "номер телефона 2"
+msgstr "phone number 2"
+
+#: app_settings/models.py:10
+msgid "адрес"
+msgstr "address"
+
+#: app_settings/models.py:11
+msgid "количество баннеров"
+msgstr ""
+
+#: app_settings/models.py:12
+msgid "остановка продаж"
+msgstr ""
+
+#: app_settings/models.py:13
+msgid "кэш баннеров"
+msgstr ""
+
+#: app_settings/models.py:14
+msgid "общий кэш"
+msgstr ""
+
+#: app_settings/models.py:16
+msgid "количество популярных книг главной страницы"
+msgstr ""
+
+#: app_settings/models.py:17
+msgid "количество отзывов на странице"
+msgstr ""
+
+#: app_settings/models.py:18
+msgid "количество книг на странице"
+msgstr ""
+
+#: app_settings/models.py:29
+msgid "Настройка сайта"
+msgstr ""
+
+#: app_settings/models.py:30
+#: app_settings/templates/app_settings/settings.html:26
+msgid "Настройки сайта"
+msgstr ""
+
+#: app_settings/templates/app_settings/settings.html:30
+msgid "Сохранить"
+msgstr ""
+
+#: app_settings/templates/app_settings/settings.html:34
+msgid "Сброс кэша"
+msgstr ""
+
+#: app_settings/templates/app_settings/settings.html:39
+msgid "Сбросить кэш раздела:"
+msgstr ""
+
+#. Translators: разделы кэша на странице настроек
+#: app_settings/views.py:17
+msgid "Баннеры"
+msgstr ""
+
+#: app_settings/views.py:18
+msgid "Общий кэш"
+msgstr ""
+
+#: templates/account.html:15
+msgid "Редактировать профиль"
+msgstr ""
+
+#: templates/account.html:27
+msgid "Заказ"
+msgstr ""
+
+#: templates/account.html:28
+msgid "от"
+msgstr ""
+
+#: templates/account.html:30
+msgid "История заказов"
+msgstr ""
+
+#: templates/account.html:35
+msgid "Тип доставки:"
+msgstr ""
+
+#: templates/account.html:41
+msgid "Оплата:"
+msgstr ""
+
+#: templates/account.html:47
+msgid "Общая стоимость:"
+msgstr ""
+
+#: templates/account.html:53
+msgid "Статус:"
+msgstr ""
+
+#: templates/account.html:64
+msgid "Активных заказов пока нет"
+msgstr ""
+
+#: templates/account.html:71
+msgid "История просмотров"
+msgstr ""
+
+#: templates/account.html:90
+msgid "Перейти на полный список"
+msgstr ""
+
+#: templates/account.html:94
+msgid "Вы пока не просмотрели ни один товар"
+msgstr ""
+
+#: templates/admin/app_settings/sitesettings/change_form.html:18
+msgid "Home"
+msgstr ""
+
+#: templates/admin/app_settings/sitesettings/change_form.html:21
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: templates/admin/app_settings/sitesettings/change_form.html:43
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/base/base.html:124 templates/base/base.html:240
+msgid "Главная"
+msgstr ""
+
+#: templates/base/base.html:126
+msgid "Моя библиотека"
+msgstr ""
+
+#: templates/base/base.html:139
+msgid "Личный кабинет"
+msgstr ""
+
+#: templates/base/base.html:141
+msgid "Административный раздел"
+msgstr ""
+
+#: templates/base/base.html:143
+msgid "Выход"
+msgstr ""
+
+#: templates/base/base.html:155
+msgid "Показать навигацию"
+msgstr ""
+
+#: templates/base/base.html:187
+msgid "Книги не добавлены"
+msgstr ""
+
+#: templates/base/base.html:202
+msgid "Поиск"
+msgstr ""
+
+#: templates/base/base.html:233
+msgid "Навигация"
+msgstr ""
+
+#: templates/base/base.html:242
+msgid "Каталог"
+msgstr ""
+
+#: templates/base/base.html:244
+msgid "Сравнение"
+msgstr ""
+
+#: templates/base/base.html:254
+msgid "Контакты"
+msgstr ""
+
+#: templates/book.html:71
+msgid "Описание"
+msgstr ""
+
+#: templates/catalog.html:12
+msgid "Сортировать по:"
+msgstr ""
+
+#: templates/catalog.html:16 templates/catalog.html:19
+#: templates/catalog.html:22 templates/catalog.html:25
+#: templates/catalog.html:28
+msgid "Популярности"
+msgstr ""
+
+#: templates/catalog.html:17 templates/catalog.html:20
+#: templates/catalog.html:23 templates/catalog.html:26
+#: templates/catalog.html:29
+msgid "Новизне"
+msgstr ""
+
+#: templates/index.html:19
+msgid "от "
+msgstr ""
+
+#: templates/login.html:9
+msgid "Вход"
+msgstr ""
+
+#: templates/login.html:16
+msgid "Имя пользователя"
+msgstr ""
+
+#: templates/login.html:21
+msgid "Пароль"
+msgstr ""
+
+#: templates/login.html:27
+msgid "Войти"
+msgstr ""
+
+#: templates/login.html:29
+msgid "Забыли пароль?"
+msgstr ""
+
+#: templates/login.html:31 templates/registration/delete_user.html:9
+#: templates/registration/registration.html:9
+#: templates/registration/registration.html:15
+msgid "Регистрация"
+msgstr ""
+
+#: templates/registration/delete_user.html:15
+msgid "Удаление аккаунта"
+msgstr ""
+
+#: templates/registration/delete_user.html:22
+msgid "Удалить аккаунт"
+msgstr ""
+
+#: templates/registration/password_reset.html:8
+#: templates/registration/password_reset_complete.html:8
+#: templates/registration/password_reset_confirm.html:8
+#: templates/registration/password_reset_done.html:8
+msgid "Восстановление пароля"
+msgstr ""
+
+#: templates/registration/password_reset.html:14
+#: templates/registration/password_reset_done.html:14
+msgid "Восстановление пароля (1/2)"
+msgstr ""
+
+#: templates/registration/password_reset.html:15
+msgid ""
+"Для восстановления пароля введите адрес электронной почты, на которую "
+"зарегистрирована учетная запись"
+msgstr ""
+
+#: templates/registration/password_reset.html:25
+msgid "Получить проверочный код"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:14
+#: templates/registration/password_reset_confirm.html:15
+#: templates/registration/password_reset_confirm.html:30
+msgid "Восстановление пароля (2/2)"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:15
+msgid "Ваш пароль установлен. Вы можете продолжить и "
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:16
+msgid "войти"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:17
+msgid "прямо сейчас."
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:16
+msgid "Придумайте новый пароль для учетной записи"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:23
+msgid "Сохранить пароль"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:31
+msgid ""
+"Ссылка для сброса пароля недействительна, возможно, потому, что она уже "
+"использовалась."
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:32
+msgid "Пожалуйста, запросите сброс нового пароля."
+msgstr ""
+
+#: templates/registration/password_reset_done.html:15
+msgid ""
+"Мы отправили вам инструкции по установке пароля, если существует учетная "
+"запись с указанным вами адресом электронной почты. Вы должны получить их в "
+"ближайшее время."
+msgstr ""
+
+#: templates/registration/password_reset_done.html:16
+msgid ""
+"Если вы не получили электронное письмо, убедитесь, что вы ввели адрес, "
+"который вы указали при регистрации, и проверьте папку со спамом."
+msgstr ""
+
+#: templates/registration/registration.html:22
+msgid "Зарегистрироваться"
+msgstr ""

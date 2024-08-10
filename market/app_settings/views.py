@@ -1,56 +1,21 @@
-from django.contrib.auth.decorators import user_passes_test
 from django.core.cache import cache
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
-from django.urls import reverse
-from django.utils.decorators import method_decorator
-from django.utils.translation import gettext_lazy as _
-from django.views import View
-
-from app_settings.forms import SettingsForm
-from app_settings.models import SiteSettings
 
 
-class SettingsView(View):
-    """Класс-представление страницы настроек"""
-    # Translators: разделы кэша на странице настроек
-    sections = (('banners', _('Баннеры')),
-                ('all', _('Общий кэш'))
-                )
+def settings_post(request):
+    """
+    Функция обрабатывающая POST запрос со страницы настроек, ловит нажатие одной из кнопок сброса кэша.
+    """
+    if request.method == 'POST':
+        all_cache = request.POST.get('all')
+        banners = request.POST.get('banners')
 
-    @method_decorator(user_passes_test(lambda u: u.is_superuser))
-    def get(self, request):
-        """
-        Функция обрабатывающая GET запрос, возвращает страницу настроек с формой
-        настроек и кнопками сброса кэша.
-        """
-        settings = SiteSettings.objects.first()
-        settings_form = SettingsForm(instance=settings)
-        return render(request, 'app_settings/settings.html', context={'settings_forms': settings_form,
-                                                                      'sections': self.sections,
-                                                                      })
+        if all_cache:
+            # Сброс всего кэша
+            cache.clear()
 
-    def post(self, request):
-        """
-        Функция обрабатывающая POST запрос со страницы настроек, сохраняет данные формы
-        настроек или ловит нажатие одной из кнопок сброса кэша.
-        """
-        settings = SiteSettings.objects.first()
-        settings_form = SettingsForm(request.POST, instance=settings)
+        # Сброс кэша определенного раздела
+        if banners:
+            cache.delete('banners')
 
-        for section in self.sections:
-            value = request.POST.get(section)
-            if value:
-                if value == 'all':
-                    # Сброс всего кэша
-                    cache.clear()
-                    break
-
-                # Сброс кэша определенного раздела
-                cache.delete(value)
-                break
-
-        if settings_form.is_valid():
-            settings.save()
-        return HttpResponseRedirect(reverse('settings'))
-
+    return HttpResponseRedirect('/admin/app_settings/sitesettings/1/change/')

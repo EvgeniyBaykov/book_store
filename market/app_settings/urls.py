@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import SettingsView
+from .views import settings_post
 
 urlpatterns = [
-    path('', SettingsView.as_view(), name='settings'),
+    path('', settings_post, name='settings'),
 ]
