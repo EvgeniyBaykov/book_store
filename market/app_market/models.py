@@ -17,7 +17,7 @@ class Book(models.Model):
     authors_note = models.CharField(max_length=2000, null=True, blank=True, verbose_name=_('примечание автора'))
     create_date = models.DateTimeField(auto_now_add=True, verbose_name=_('дата создания'))
     update_date = models.DateTimeField(null=True, auto_now=True, verbose_name=_('дата редактирования'))
-    slug = models.SlugField(verbose_name=_('название ссылки'))
+    slug = models.SlugField(max_length=255, db_index=True, unique=True, verbose_name='URL')
 
     class Meta:
         verbose_name = _('Книга')
@@ -49,7 +49,7 @@ class Genre(MPTTModel):
     name = models.CharField(max_length=100, unique=True, verbose_name=_('название жанра'))
     parent = TreeForeignKey('self', on_delete=models.PROTECT, null=True, blank=True, related_name='subgenre',
                             verbose_name=_('родительский жанр'))
-    slug = models.SlugField(verbose_name=_('название ссылки'))
+    slug = models.SlugField(max_length=255, db_index=True, unique=True, verbose_name='URL')
 
     class MPTTMeta:
         order_insertion_by = ['name']
@@ -82,7 +82,7 @@ class Cycle(models.Model):
     create_date = models.DateField(auto_now_add=True, verbose_name=_('дата создания'))
     update_date = models.DateField(null=True, auto_now=True, verbose_name=_('дата редактирования'))
     completed = models.BooleanField()
-    slug = models.SlugField(verbose_name=_('название ссылки'))
+    slug = models.SlugField(max_length=255, db_index=True, unique=True, verbose_name='URL')
 
     def __str__(self):
         return f'{self.name}'

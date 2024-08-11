@@ -7,12 +7,6 @@ def get_all_books():
     return books
 
 
-def get_all_genres():
-    """Функция получает все жанры из БД"""
-    genres = Genre.objects.select_related('parent').all()
-    return genres
-
-
 def get_catalog_products(request):
     """
     :param request:

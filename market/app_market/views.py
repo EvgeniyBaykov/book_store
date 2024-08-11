@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView, View
-from app_market.utils import get_all_books, get_all_genres, get_catalog_products
+from app_market.utils import get_all_books, get_catalog_products
 from app_market.models import Book
 
 
@@ -11,7 +11,6 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["books"] = get_all_books()
-        context["categories"] = get_all_genres()
         return context
 
 
