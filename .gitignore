@@ -158,8 +158,5 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 
 
-market/app_settings/migrations/
-
-
 # Ignore dynaconf secret files
 .secrets.*
