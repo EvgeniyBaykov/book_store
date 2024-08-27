@@ -7,6 +7,57 @@
     <div class="Section Section_column Section_columnLeft">
       <div class="wrap">
 
+
+      <div class="Section-column">
+          <div class="Section-columnSection">
+            <header class="Section-header">
+              <strong class="Section-title">{% trans 'Фильтр' %}
+              </strong>
+            </header>
+            <div class="Section-columnContent">
+              <form class="form" action="{% url 'catalog' %}" method="get">
+                <div class="form-group">
+                  <div class="range Section-columnRange">
+                    <input class="range-line" id="price" name="price" type="text" data-type="double" data-min="7" data-max="1000000" data-from="7" data-to="1000000"/>
+                    <div class="range-price">{% trans 'Цена' %}:&#32;
+                      <div class="rangePrice">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input class="form-input form-input_full" id="title" name="title" type="text" placeholder="{% trans 'Название' %}"/>
+                </div>
+
+
+
+                <div class="form-group">
+                  <div class="buttons"><input class="btn btn_square btn_dark btn_narrow" type="submit" value="{% trans 'Фильтр' %}">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="Section-columnSection">
+            <header class="Section-header">
+              <strong class="Section-title">{% trans 'Популярные теги' %}
+              </strong>
+            </header>
+            <div class="Section-columnContent">
+              <div class="buttons">
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Антиутопия' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Другие миры' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Романы' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Для женщин' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'Разработка' %}</a>
+                  <a class="btn btn_default btn_sm" href="#">{% trans 'ЛитРПГ' %}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
         <div class="Section-content">
           <div class="Sort">
             <div class="Sort-title">{% trans 'Сортировать по:' %}
@@ -28,6 +79,9 @@
                     <a class="Sort-sortBy Sort-sortBy_inc" href="?{{ add_url }}&sort_by=rating">{% trans 'Популярности' %}</a>
                     <a class="Sort-sortBy" href="?{{ add_url }}&sort_by=year">{% trans 'Новизне' %}</a>
                 {% endif %}
+
+
+
             </div>
           </div>
           <div class="Cards">

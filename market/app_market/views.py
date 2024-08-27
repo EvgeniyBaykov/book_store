@@ -34,4 +34,5 @@ class BookView(DetailView):
 class CatalogView(View):
     """Каталог книг"""
     def get(self, request):
+        sort_by = request.GET.get('sort_by')
         return render(request, 'catalog.html', context=get_catalog_products(request))
