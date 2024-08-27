@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView, View
-from app_market.utils import get_all_books, get_catalog_products
+from app_market.utils import get_all_books, get_catalog_books, search_books_and_authors
 from app_market.models import Book
 
 
@@ -10,7 +10,8 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["books"] = get_all_books()
+        context['books'] = get_all_books()
+        context['popular_list'] = get_all_books()[:8]
         return context
 
 
@@ -34,5 +35,7 @@ class BookView(DetailView):
 class CatalogView(View):
     """Каталог книг"""
     def get(self, request):
-        sort_by = request.GET.get('sort_by')
-        return render(request, 'catalog.html', context=get_catalog_products(request))
+        search = request.GET.get('search')
+        if search:
+            return render(request, 'catalog.html', context=search_books_and_authors(search))
+        return render(request, 'catalog.html', context=get_catalog_books(request))

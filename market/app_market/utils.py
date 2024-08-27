@@ -1,4 +1,6 @@
-from app_market.models import Book, Genre
+from django.db.models import Q
+
+from app_market.models import Book
 
 
 def get_all_books():
@@ -7,7 +9,7 @@ def get_all_books():
     return books
 
 
-def get_catalog_products(request):
+def get_catalog_books(request):
     """
     :param request: request
     Функция возвращает:
@@ -36,5 +38,19 @@ def get_catalog_products(request):
         'cards': books,
         'add_url': add_url,
         'sort_by': sort_by
+    }
+    return context
+
+
+def search_books_and_authors(search):
+    books = get_all_books()
+    books = books.filter(title__icontains=search)
+
+    # filter(author__profile__first_name='Дем')
+
+    search_lst = search.split(' ')
+    print(search_lst)
+    context = {
+        'cards': books,
     }
     return context
