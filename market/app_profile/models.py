@@ -28,6 +28,6 @@ class Profile(models.Model):
 
 class ProfileAvatar(models.Model):
     """Модель описывающая аватар пользователя"""
-    user = models.ForeignKey('Profile', on_delete=models.CASCADE, related_name='avatar', verbose_name=_('пользователь'))
+    user = models.OneToOneField('Profile', on_delete=models.CASCADE, related_name='avatar', verbose_name=_('пользователь'))
     image = models.ImageField(upload_to='images/profiles/%Y/%m', verbose_name=_('аватар пользователя'))
     image_alt = models.CharField(max_length=100, default=_('Аватар пользователя'), verbose_name=_('подсказка'))
