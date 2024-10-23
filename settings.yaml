@@ -17,13 +17,16 @@ default:
   COMMON_BOOKS_TOP_NUMBER: 8
   NUM_REVIEWS_PER_PAGE: 2
   NUM_BOOKS_PER_PAGE: 8
+  CELERY_BROKER_URL: ''
+  CELERY_RESULT_BACKEND: ''
 development:
   NAME: 'developer'
   ALLOWED_HOSTS:
   - 127.0.0.1
   - localhost
-  DEBUG: true
   EMAIL_HOST: 'smtp.email-domain.com'
+  CELERY_BROKER_URL: 'redis://localhost:6379'
+  CELERY_RESULT_BACKEND: 'redis://localhost:6379'
 production:
   NAME: 'admin'
   DB_HOST: ''
@@ -31,3 +34,5 @@ production:
   DB_NAME: ''
   DB_USER: ''
   DB_PASSWORD: ''
+  CELERY_BROKER_URL: ''
+  CELERY_RESULT_BACKEND: ''
