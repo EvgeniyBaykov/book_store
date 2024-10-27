@@ -10,9 +10,9 @@ class Profile(models.Model):
         ('W', _('Женский')),
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', verbose_name=_('пользователь'))
-    first_name = models.CharField(max_length=200, verbose_name=_('имя пользователя'))
+    first_name = models.CharField(max_length=200, blank=True, null=True, verbose_name=_('имя пользователя'))
     last_name = models.CharField(max_length=200, blank=True, null=True, verbose_name=_('фамилия пользователя'))
-    phone = models.BigIntegerField(unique=True, null=True, blank=True, verbose_name=_('номер телефона'))
+    phone = models.CharField(max_length=12,unique=True, null=True, blank=True, verbose_name=_('номер телефона'))
     author = models.BooleanField(default=False, verbose_name=_('является ли автором'))
     birthday = models.DateField(blank=True, null=True, verbose_name=_('дата рождения'))
     gender = models.CharField(blank=True, null=True, max_length=1, choices=GENDER_CHOICES, verbose_name=_('пол'))

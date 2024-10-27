@@ -4,16 +4,42 @@ from django.core.exceptions import ValidationError
 from app_profile.models import Profile, ProfileAvatar
 
 
-class ProfileForm(forms.ModelForm):
-    image = forms.ImageField(required=False, label="Новый аватар")
+# class ProfileForm(forms.ModelForm):
+#     email = forms.EmailField(required=False)
+#
+#     class Meta:
+#         model = Profile
+#         fields = ['phone', 'first_name', 'last_name']
+#
+#     def clean_phone(self):
+#         data = self.cleaned_data['phone']
+#
+#         if Profile.objects.filter(phone=data).exists():
+#             # self.add_error('phone', "Пользователь с таким номером телефона уже существует.")
+#             raise ValidationError('Пользователь с таким номером телефона уже существует.')
+#
+#         return data
 
+
+class ProfileAvatarForm(forms.ModelForm):
     class Meta:
-        model = Profile
-        fields = ['phone', 'first_name', 'last_name']
+        model = ProfileAvatar
+        fields = ['image']
+
+    image = forms.ImageField(required=False)
+
+
+class ProfileForm(forms.Form):
+    image = forms.ImageField(required=False)
+    first_name = forms.CharField(max_length=200, required=False)
+    last_name = forms.CharField(max_length=100, required=False)
+    email = forms.EmailField(required=False)
+    phone = forms.CharField(required=False)
 
     def clean_phone(self):
-        phone = self.cleaned_data.get('phone')
-        if Profile.objects.filter(phone=phone).exists():
-            raise ValidationError('Пользователь с таким номером телефона уже существует.')
-        return phone
+        data = self.cleaned_data['phone']
 
+        if Profile.objects.filter(phone=data).exists():
+            raise ValidationError('Пользователь с таким номером телефона уже существует.')
+
+        return data
